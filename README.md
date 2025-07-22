@@ -18,10 +18,8 @@ Provides source citations including PDF name, section heading, and link
 
 Easy-to-use Streamlit chat interface
 
-Folder Structure
-bash
-Copy
-Edit
+## Folder Structure
+
 .
 ├── app.py                    # Streamlit chat UI
 ├── embedding_pipeline.py     # Script to embed and store documents in FAISS
@@ -31,7 +29,7 @@ Edit
 │   └── db_faiss/             # Saved FAISS vectorstore directory
 ├── .env                      # Contains GROQ_API_KEY
 └── requirements.txt          # Python dependencies
-How It Works
+## How It Works
 Embedding Pipeline
 The embedding_pipeline.py script reads the data/data_chunks.json file
 
@@ -41,7 +39,7 @@ Sentence-transformer model from HuggingFace generates embeddings
 
 FAISS is used to index and save the document vectors locally
 
-Query Handling
+## Query Handling
 The app.py file launches a Streamlit-based chatbot interface
 
 User inputs a question via the chat input
@@ -54,50 +52,35 @@ The query is passed to a Groq-hosted LLM (e.g., LLaMA 4)
 
 The assistant returns an accurate answer along with document citations
 
-Installation
+## Installation
 Clone the repository:
 
-bash
-Copy
-Edit
+
 git clone https://github.com/your-username/RAG_Based_AI_Assistant_For_Specific_Json_File.git
 cd RAG_Based_AI_Assistant_For_Specific_Json_File
-(Optional) Create a virtual environment:
+## (Optional) Create a virtual environment:
 
-bash
-Copy
-Edit
+
 python -m venv venv
 source venv/bin/activate  # For Windows: venv\Scripts\activate
-Install dependencies:
+## Install dependencies:
 
-bash
-Copy
-Edit
+
 pip install -r requirements.txt
-Environment Variables
+## Environment Variables
 Create a .env file in the root directory and add your Groq API key:
 
-ini
-Copy
-Edit
 GROQ_API_KEY=your_groq_api_key_here
-Usage
-Step 1: Embed the JSON file
-bash
-Copy
-Edit
-python embedding_pipeline.py
+## Usage
+### Step 1: Embed the JSON file
+python embedding.py
 This command will generate and store embeddings in the vectorstore/db_faiss directory.
 
-Step 2: Run the Streamlit chatbot
-bash
-Copy
-Edit
+### Step 2: Run the Streamlit chatbot
 streamlit run app.py
 This will open a local Streamlit interface for asking questions based on the JSON content.
 
-Requirements
+## Requirements
 Refer to requirements.txt. Key packages include:
 
 langchain
@@ -116,7 +99,7 @@ streamlit
 
 python-dotenv
 
-Technologies Used
+## Technologies Used
 LangChain for document parsing and QA chain
 
 FAISS for vector indexing and similarity search
