@@ -22,7 +22,7 @@ Easy-to-use Streamlit chat interface
 
 .
 ├── app.py                    # Streamlit chat UI
-├── embedding_pipeline.py     # Script to embed and store documents in FAISS
+├── embedding.py     # Script to embed and store documents in FAISS
 ├── data/
 │   └── data_chunks.json      # Input JSON with document chunks and metadata
 ├── vectorstore/
